@@ -295,3 +295,27 @@ app.patch('/updateAgentName', (req, res) => {
                         })
         })
     });
+
+/**
+* @swagger
+* /say: 
+*    get:
+*      tags:
+*        - api
+*      summary: say words (quiz 9)
+*      operationId: say
+*      description: |
+*        returns a phrase. 
+*      responses:
+*        '200': 
+*          description: ok
+*/
+
+ app.get('/say', (req, res) => {
+
+    res.send(sayStuff(req));
+});
+
+function sayStuff(req){
+  return ("Christina says " + req.query.keyword)
+}
